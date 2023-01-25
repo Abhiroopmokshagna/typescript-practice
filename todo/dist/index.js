@@ -1,15 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const todoItem_1 = require("./todoItem");
-const todoCollection_1 = require("./todoCollection");
 const inquirer = require("inquirer");
+const jsonTodoCollection_1 = require("./jsonTodoCollection");
 let todos = [
     new todoItem_1.TodoItem(1, "Buy flowers"),
     new todoItem_1.TodoItem(2, "Get shoes"),
     new todoItem_1.TodoItem(3, "Collect tickets"),
     new todoItem_1.TodoItem(4, "Call joe", true),
 ];
-let collection = new todoCollection_1.TodoCollection("Adam", todos);
+let collection = new jsonTodoCollection_1.JsonTodoCollection("Adam", todos);
 let showCompleted = true;
 function displayTodoList() {
     console.log(`${collection.userName}'s Todo list ` +
@@ -65,7 +65,6 @@ function promptUser() {
         name: "command",
         message: "Choose option",
         choices: Object.values(Commands),
-        badProperty: true,
     })
         .then((answers) => {
         switch (answers["command"]) {
