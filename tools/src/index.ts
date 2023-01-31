@@ -1,8 +1,9 @@
-function printMessage(msg: string): void {
-  console.log(`Message: ${msg}`);
-}
+import { sum } from "./calc";
 
-printMessage("Hello, Typescript");
-// printMessage(100);
-printMessage("It is sunny day");
-printMessage("TEsting...");
+let printMessage = (msg: string): void => console.log(`Message: ${msg}`);
+let message = "Hello, Typescript";
+
+printMessage(message);
+
+let total = sum(100, 200, 300);
+console.log(`Total: ${total}`);
