@@ -5,3 +5,4 @@ function sum(...vals) {
     return vals.reduce((total, val) => (total += val));
 }
 exports.sum = sum;
+//# sourceMappingURL=calc.js.map
